@@ -8,7 +8,7 @@ def word_substituter(string)
   else
     new_string += (word + " ")
   end}
-  new_string.remove((new_string.length) - 1)
+  new_string.delete((new_string.length) - 1)
   return new_string
 end
 

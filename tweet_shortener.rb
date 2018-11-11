@@ -2,7 +2,7 @@ def word_substituter(string)
   dictionary = {"hello"=>'hi',"to"=>'2',"two"=>'2',"too"=>'2',"for"=>'4',"four"=>'4',
   "be"=>'b',"you"=>'u',"at"=>'@',"and"=>'&'}
   new_string = ""
-  string.each_line {|word|
+  string.each(' ') {|word|
   if dictionary.include? (word)
     new_string += (dictionary[word] + " ")
   else

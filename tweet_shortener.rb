@@ -1,9 +1,11 @@
-def word_substituter(word)
+def word_substituter(array)
   dictionary = {"hello"=>'hi',"to"=>'2',"two"=>'2',"too"=>'2',"for"=>'4',"four"=>'4',
   "be"=>'b',"you"=>'u',"at"=>'@',"and"=>'&'}
+  array.each {|word|
   if dictionary.include? (word)
-    return dictionary[word]
-  end
+    word = dictionary[word]
+  end}
+  return array
 end
 
 def bulk_tweet_shortener(array)
@@ -15,8 +17,7 @@ end
 
 def selective_tweet_shortener(tweet)
   if tweet.length > 140
-    tweet.each {|word|
-    word = word_substituter(word)}
+    tweet = word_substituter(tweet)
     tweet
   else
     tweet

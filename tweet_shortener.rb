@@ -1,13 +1,26 @@
 def word_substituter(string)
   dictionary = {"hello"=>'hi',"to"=>'2',"two"=>'2',"too"=>'2',"for"=>'4',"four"=>'4',
-  "be"=>'b',"you"=>'u',"at"=>'@',"and"=>'&'}
-  string = string.strip
+                "be"=>'b',"you"=>'u',"at"=>'@',"and"=>'&'}
+  string = string.split
+  new_string = []
   string.each {|word|
-  if dictionary.include? (word)
-    word = dictionary[word]
-  end}
-  string.join
-  return string
+    if word.capitalize == word
+      if dictionary.include? (word.downcase)
+        word = dictionary[word.downcase]
+        word = word.capitalize
+        new_string.push(word)
+      else
+        new_string.push(word)
+      end
+    else
+      if dictionary.include?(word.downcase)
+        new_string.push(dictionary[word])
+      else
+        new_string.push(word)
+      end
+    end}
+  new_string.join
+  return new_string
 end
 
 def bulk_tweet_shortener(array)

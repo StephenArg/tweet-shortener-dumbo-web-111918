@@ -25,8 +25,8 @@ end
 
 def bulk_tweet_shortener(array)
   array.each {|tweet|
-  tweet = selective_tweet_shortener(tweet)!
-  tweet = shortened_tweet_truncator(tweet)!
+  tweet = selective_tweet_shortener(tweet)
+  tweet = shortened_tweet_truncator(tweet)
   puts tweet}
 end
 
